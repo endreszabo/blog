@@ -1,6 +1,9 @@
 ---
-Title: Nginx as a general purpose TCP proxy
-Date: 2011/07/18 21:16:00
+title: Nginx as a general purpose TCP proxy
+date: 2011/07/18 21:16:00
+tags: nginx
+categories: nginx
+draft: True
 ---
 Nginx is well known for its powerful HTTP reverse-proxy features. Altough Nginx does its job well in pretty lot of situations, there are always a need for a general TCP proxy stuff. Sadly this feature does not come boundled in with the stock Nginx.
 
@@ -15,7 +18,7 @@ Similarly to http upstreaming, this module also lets you use more that one upstr
 - pop3,
 - imap and general tcp handshake.
 
-A simply tcp proxy configuration entry looks like this (taken from README):
+A simple tcp proxy configuration entry looks like this (taken from README):
 
 ::
 
