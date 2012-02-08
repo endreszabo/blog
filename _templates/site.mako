@@ -9,7 +9,7 @@
 		<div id="nav"><%doc>
 			<div id="menus">
 				<ul><li class="current_page_item"><a href="/">Blog</a></li></ul>
-				<ul><li><a href="#">etc.</a></li></ul>
+				<ul><li><a href="#">About</a></li></ul>
 			</div></%doc>
 			<div id="search">
 				<script type="text/javascript">
