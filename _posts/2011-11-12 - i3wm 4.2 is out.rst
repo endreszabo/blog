@@ -1,0 +1,19 @@
+---
+title: i3 wm 4.1 is out
+date: 2011/11/11 23:58:35
+tags: i3
+categories: floss
+---
+The long awaited 4.1 is out with implemented features came from right top of the wishlistes:
+
+- tray support in i3bar (for NetworkManager, Skype, etc.);
+- window criteria now supports PCRE;
+- application startup notification;
+- the application window will appear on the workspace on which it was launched and not on the currently focused workspace (actually, I will miss this 'feature' as I used to launch libreoffice from a shell and then I switched to another workspace to use libreoffice from there);
+- i3bar is now configurable in the i3 configfile.
+
+and much more in the `release notes`_.
+
+However, I still miss a Nagios-like event broker interface for further event notification and control scripting support. The simple event subscription API in i3 is too simple for my needs right now (I have a long-lasting dream of a hardware interface for i3, details later :) ). I've flagged the Arch community package as out of date so expect an 'official' update package release soon.
+
+.. _`release notes`: http://i3wm.org/downloads/RELEASE-NOTES-4.1.txt

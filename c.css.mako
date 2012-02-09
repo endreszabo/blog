@@ -113,7 +113,7 @@ h2.title-single{color:#345;}
 .entry .entry tr.even td{background:#f7f7f7;}
 .entry th{background:#edeff0;}
 .entry blockquote{color:#555;padding:10px;margin:0 0 20px;border:1px solid #ddd;background:#eee;}
-.entry code{background:#333;color:#ddd;}
+.entry code{color:#444;}
 .entry pre{overflow:auto;width:95%;line-height:16px;margin:0 0 20px;padding:0 5px 16px;color:#555;font-family:"Courier New",FixedSys;font-size:12px;background:#fafafa;border:1px solid #ccc;border-left:15px solid #ccc;}
 .post-info-top{border-top:1px solid #ddd;line-height:18px;height:18px;position:relative;color:#999;margin:0 0 18px;padding:2px 10px;overflow:hidden;display:block;}
 .post-info-bottom{border-bottom:1px solid #fff;line-height:24px;position:relative;color:#999;margin:0;padding:2px 10px;overflow:hidden;display:block;}
