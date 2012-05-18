@@ -2,7 +2,6 @@
 title: Le az elavult "www."-előtaggal!
 date: 2011/05/22 18:43:00
 tags: hu, wtfsrsly
-permalink: http://end.re/no-www
 categories: hu, megváltjukavilágot
 draft: true
 ---
