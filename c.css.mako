@@ -1,6 +1,4 @@
-<%inherit file="_templates/base.mako" />
-<%self:filter chain="rmnl,rmc">
-/*
+<%inherit file="_templates/base.mako" /><%self:filter chain="rmnl,rmc">/*
 Theme Name:zBench
 Theme URI:http://zww.me/archives/25131
 Description:It is a simply WordPress theme without any plugins needed (support plugin WP-PageNavi, WP Page Numbers, WP-PostViews, wp-utf8-excerpt, Related Posts of Simple Tags, WP-RecentComments), little images, custom-menu, widgets, threaded-comments. For WordPress version 3.0+
@@ -12,13 +10,11 @@ Tags:custom-menu, threaded-comments, two-columns, fixed-width, right-sidebar, th
 License:GNU General Public License, v2 (or newer)
 License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-*/
-
-/* RESET */
+* RESET */
 *{margin:0;padding:0;}
 html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input{margin:0;padding:0;}
 /* BASIC */
-abbr[title], acronym[title]{border-bottom:thin solid;cursor:help;}
+abbr[title],acronym[title]{border-bottom:thin solid;cursor:help;}
 body{background:#f7f7f7;font-size:12px;font-family:Tahoma,Arial,Helvetica,sans-serif;color:#333;text-align:left;}
 h1,h2,h3,h4,h5,h6{font-weight:bold;}
 h1{font-size:24px;line-height:30px;}
@@ -35,7 +31,6 @@ a:hover{color:#4a630f;text-decoration:none;}
 fieldset,img{border:none;}
 hr{display:none;}
 .clear{clear:both;margin:0;padding:0;}
-
 /* radius */
 #search,
 #sidebar-border,#sidebar,
@@ -46,7 +41,6 @@ hr{display:none;}
 #author,#email,#url,#submit{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
 #menus a{-moz-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;}
 #menus ul ul a{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;}
-
 /* #nav */
 #nav{z-index:5;position:relative;height:31px;margin:0 auto;padding-top:20px;clear:both;background:#454546;}
 #menus{width:700px;height:31px;margin:0 auto;padding-right:260px;font-size:14px;text-shadow:0 1px 0 #000;}
@@ -67,16 +61,13 @@ hr{display:none;}
 #menus ul ul{display:none;position:absolute;top:31px;left:0;float:left;width:150px;z-index:99999;}
 #menus ul ul li{min-width:150px;}
 #menus ul ul ul{left:100%;top:0;}
-
 /* #search */
 #search{box-shadow:2px 2px 5px #777;-moz-box-shadow:2px 2px 5px #777;-webkit-box-shadow:2px 2px 5px #777;position:absolute;background:#565657;right:50%;margin-right:-450px;bottom:-14px;width:230px;height:26px;overflow:hidden;border:1px solid #999;}
 #search form{padding:0;}
 #search input#s{width:190px;height:14px;background:transparent;border:none;color:#ddd;padding:6px;font-size:12px;}
 #search form input#searchsubmit{cursor:pointer;position:absolute;right:2px;top:0;width:30px;height:26px;padding-left:30px;background:#565657 url('s.gif') no-repeat right 0;border:none;border-left:1px solid #999;text-indent:-9999px;}
-
 /* #wrapper */
 #wrapper{margin:0 auto;width:960px;}
-
 /* #header */
 #header{overflow:hidden;z-index:1;position:relative;margin:30px auto;}
 #header h1{float:left;padding:0 0 0 10px;text-shadow:1px 1px 1px #999;font-size:28px;font-family:Georgia,"Times New Roman",Times,serif;}
@@ -84,12 +75,10 @@ hr{display:none;}
 #header h2{float:left;height:20px;overflow:hidden;line-height:18px;padding:10px 0 0 20px;color:#222;font-size:12px;font-weight:normal;text-shadow:0 1px 0 #fff;}
 #header_image{width:952px;height:182px;margin:30px 0 0;padding:3px;border:1px solid #ccc;}
 #header_image_border{overflow:hidden;width:950px;height:180px;background:#565657;border:1px solid #fff;}
-
 /* #content */
 #content{overflow:hidden;float:left;width:640px;padding:0;margin-right:20px;}
 .page-title{margin:0 0 20px;background:#eee;border:1px solid #ccc;}
 .page-title h1{font-size:18px;height:30px;line-height:30px;padding:5px 10px;border:1px solid #fff;}
-
 /* #post */
 .post{position:relative;width:640px;margin:0 0 10px;padding:0;}
 div.post-single{margin:0;}
@@ -114,7 +103,7 @@ h2.title-single{color:#345;}
 .entry th{background:#edeff0;}
 .entry blockquote{color:#555;padding:10px;margin:0 0 20px;border:1px solid #ddd;background:#eee;}
 .entry code{color:#444;}
-.entry pre{overflow:auto;width:95%;line-height:16px;margin:0 0 20px;padding:0 5px 16px;color:#555;font-family:"Courier New",FixedSys;font-size:12px;background:#fafafa;border:1px solid #ccc;border-left:15px solid #ccc;}
+.entry pre{overflow:auto;width:95%;line-height:16px;margin:0 0 20px;padding:0 5px 16px;color:#555;font-family:"Courier New",FixedSys;font-size:12px;background:#fafafa;border:2px solid #ccc;border-left:15px solid #ccc;}
 .post-info-top{border-top:1px solid #ddd;line-height:18px;height:18px;position:relative;color:#999;margin:0 0 18px;padding:2px 10px;overflow:hidden;display:block;}
 .post-info-bottom{border-bottom:1px solid #fff;line-height:24px;position:relative;color:#999;margin:0;padding:2px 10px;overflow:hidden;display:block;}
 .post-info-top a,.post-info-bottom a{color:#999;}
@@ -134,7 +123,6 @@ h2.sticky-h2 a{color:#ff4e00;}
 .add-info{padding:0 10px;}
 .add-info h3{line-height:16px;font-size:12px;color:#4a630f;margin-bottom:5px;background:#e5e5e5;}
 .add-info ul{list-style:square;}
-
 /* #sidebar-border */
 #sidebar-border{position:relative;float:left;width:298px;background:#f2f2f2;border:1px solid #ccc;}
 /* #rss */
@@ -266,11 +254,11 @@ ol.commentlist li ul.children li div.reply a:hover{background:#fafafa;}
 /* .gallery-caption */
 #content .gallery .gallery-caption{color:#888;font-size:12px;margin:0 0 12px;}
 div#flickr_badge_wrapper {
-	padding: 5px 5px;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+padding:5px 5px;
+margin-top:2;
+margin-left:auto;
+margin-right:auto;
 }
-div.flickr_badge_image { margin-right: 5px; display: inline;}
-.flickr_badge_image img { border: 0px solid #666; padding: 0px; margin: 0px;}
+div.flickr_badge_image{margin-right:5px;display:inline;}
+.flickr_badge_image img{border:1px solid #ccc;padding:0px;margin:0px;}
 </%self:filter>

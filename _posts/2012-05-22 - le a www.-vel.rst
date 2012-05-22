@@ -1,0 +1,79 @@
+---
+title: Le az elavult "www."-előtaggal!
+date: 2011/05/22 18:43:00
+tags: hu, wtfsrsly
+permalink: http://end.re/no-www
+categories: hu, megváltjukavilágot
+draft: true
+---
+Drága Magyarok!
+Drága Internetipari jómunkásemberek! :)
+
+Egy régi berögződés megdöntésére teszek ezúton naiv és reménytelen kísérletet. El szeretném törölni (vagy ésszerűre csökkenteni) a **www.**-vel kezdődő Internetes címeket. Ez a konvenció a 90-es évek maradványértéke: pusztán technikai értelemben semmi nem indokolja ennek fenntartását és - sajnálatos módon nem ritkán - a kizárólagos használatát.
+
+Hazánkban (valószínűleg az emberek rugalmatlanságából fakadóan) megszokott a honlap címek www-vel keződő használta, a közbeszédben is egybeforrott az "Internet" a "vévévé"-vel. Ahogy az e-mail címek domainjeiben is sikerült elhagyni a "mail." előtagot, úgy szintén időszerű és korszerű volna a weboldalaknál is hanyagolni a "www."-t.
+
+**Történelmi múlt**
+
+A kezdeti böngészők esetében jellemző volt, hogy ha egy olyan címet gépeltünk be, ami nem www-vel vagy nem ftp-vel kezdődött, akkor nem tudta eldönteni, hogy milyen protokollal (http vagy ftp esetleg gopher :) ) kezelje a címet. Ezért szükséges volt minden esetben a "http://" kiírása a domainnév elé, ami macerás, mert hosszabb és nehezebb is lebetűzni a telefonba az egyszerűbb embereknek.
+
+I've made the following nginx setup to make my irtual host instance more advanced. It has the following features:
+
+**Jelenlegi helyzet**
+
+Egész jó körkép rajzolható fel, jól elkülöníthető kategóriákba sorolva a www használat és átirányítási szokásokat. Ezeknek négy fő fajtájuk van:
+
+* www.domain.hu -> domain.hu átirányító
+  liberális, modern és trendi honlapok
+* domain.hu -> www.domain.hu átirányító
+  konzervatív, technológiától magát távol tartó honlapok
+* mindkét, domain.hu és www.domain.hu alatt szolgáltató
+  ezek azok akik biztosra akarnak menni - sajnos kockázatokkal. Nem hatékony, mert az egyszerűbb crawlerek és scriptelt megoldások, de még a böngésző cachek is duplán dolgozzák fel az ilyen "kettős" tartalmakat
+* csak www.domain.hu alatt szolgáltató
+  jellemzően alacsony informatikai kompetenciát felmutatni tudó vállalatok, nagy részben állami honlapok.
+
+**Állatorvosi lovak**
+
+Kiváló példaként szerepelhet itt egyik legnagyobb magyarországi munkaadó, az államvasutak www.mav.hu című honlapja, melyet csak www előtaggal lehet elérni.
+
+**Módszerek az átirányításra**
+
+Itt különféle webszerverek esetében tételes bemutatom, hogy hogy lehet a példa okárt a "www.end.re" -> "end.re" átirányítást megtenni (na tessék, még a blogmotor is csak a "www."-st tekinti URL-nek).
+
+Apache:
+
+::  
+
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L] 
+
+Nginx:
+
+::
+
+    server {
+            server_name www.end.re;
+            return 301 http://end.re$request_uri;
+            ...
+    }
+
+Lighttpd:
+
+::
+
+    $HTTP[”host”] =~ "^www\.end\.re" {
+        url.redirect = (
+            "^/(.*)$" => "http://end.re/$1"
+        )
+    }
+
+IIS:
+
+- Az Internet Services Manager-ben hozzunk létre egy hostot a domainünk www-s kezdetű változatával ("www.end.re");
+- A tulajdonságok kattintsunk a "Home Directory" fülre;
+- A "When connecting to this resource the content should come from" lehetőségei közül válasszuk ki a "A redirection to a URL"-t;
+- "Redirect to" mezőbe írjuk be a domainünk www nélküli nevét ("end.re");
+- Majd a "A permanent redirection for this resource." checkboxot jelöljük be;
+- OK gombra kattintva készen is vagyunk.
+
