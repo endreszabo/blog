@@ -1,1 +1,6 @@
-_site/
+.sass-cache/
+public/
+static/pimg
+static/css/screen.css*
+deploy.sh
+

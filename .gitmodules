@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-end.re"]
+	path = themes/hugo-theme-end.re
+	url = git@github.com:endreszabo/hugo-theme-end.re

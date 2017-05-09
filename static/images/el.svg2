@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="184" height="39" 
+	xmlns='http://www.w3.org/2000/svg' 
+	xmlns:xlink='http://www.w3.org/1999/xlink'> 
+	<defs>
+		<rect id="k" x="0" y="0" width="9" height="9" fill="black"/>
+		<g id="o">
+			<rect id="k" x="0" y="0" width="9" height="9" fill="black"/>
+			<circle cx="4.5" cy="4.5" r="4" fill="gray"/>
+		</g>
+		<circle id="d" cx="4.5" cy="4.5" r="4" fill="black"/>
+	</defs>
+	<g>
+		<use xlink:href="#k" x="0" y="0"/>
+		<use xlink:href="#k" x="10" y="0"/>
+		<use xlink:href="#k" x="20" y="0"/>
+		<use xlink:href="#k" x="0" y="10"/>
+		<use xlink:href="#k" x="10" y="10"/>
+		<use xlink:href="#k" x="0" y="20"/>
+		<use xlink:href="#k" x="0" y="30"/>
+		<use xlink:href="#k" x="10" y="30"/>
+		<use xlink:href="#k" x="20" y="30"/>
+
+		<use xlink:href="#k" x="35" y="0"/>
+		<use xlink:href="#k" x="45" y="0"/>
+		<use xlink:href="#k" x="35" y="10"/>
+		<use xlink:href="#k" x="55" y="10"/>
+		<use xlink:href="#k" x="35" y="20"/>
+		<use xlink:href="#k" x="55" y="20"/>
+		<use xlink:href="#k" x="35" y="30"/>
+		<use xlink:href="#k" x="55" y="30"/>
+
+		<use xlink:href="#k" x="80" y="0"/>
+		<use xlink:href="#k" x="90" y="0"/>
+		<use xlink:href="#k" x="70" y="10"/>
+		<use xlink:href="#k" x="90" y="10"/>
+		<use xlink:href="#k" x="70" y="20"/>
+		<use xlink:href="#k" x="90" y="20"/>
+		<use xlink:href="#k" x="70" y="30"/>
+		<use xlink:href="#k" x="80" y="30"/>
+		<use xlink:href="#k" x="90" y="30"/>
+		<use xlink:href="#k" x="90" y="30"/>
+
+		<use xlink:href="#d" x="105" y="30"/>
+
+		<use xlink:href="#k" x="130" y="0"/>
+		<use xlink:href="#k" x="140" y="0"/>
+		<use xlink:href="#k" x="120" y="10"/>
+		<use xlink:href="#k" x="140" y="10"/>
+		<use xlink:href="#k" x="130" y="20"/>
+		<use xlink:href="#k" x="140" y="20"/>
+		<use xlink:href="#k" x="120" y="30"/>
+		<use xlink:href="#k" x="140" y="30"/>
+
+		<use xlink:href="#k" x="155" y="0"/>
+		<use xlink:href="#k" x="165" y="0"/>
+		<use xlink:href="#k" x="175" y="0"/>
+		<use xlink:href="#o" x="165" y="10"/>
+		<use xlink:href="#k" x="175" y="10"/>
+		<use xlink:href="#o" x="175" y="20"/>
+		<use xlink:href="#o" x="155" y="30"/>
+		<use xlink:href="#o" x="165" y="30"/>
+		<use xlink:href="#o" x="175" y="30"/>
+	</g>
+</svg>
+

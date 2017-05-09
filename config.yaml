@@ -1,0 +1,87 @@
+DefaultContentLanguage: "en"
+copyright: "Copyright 2011-2016 Endre Szabo"
+description: "yet another tech blog with underdeveloped thoughts, quick and dirty tips and tricks, random ramblings"
+baseURL: https://staging.end.re/
+languageCode: en-us
+title: end.re
+MetaDataFormat: yaml
+theme: hugo-theme-end.re
+pygmentsUseClasses: true
+pygmentsStyle: vim
+pygmentsCodeFences: true
+preserveTaxonomyNames: false
+RemovePathAccents: false
+pluralizelisttitles: false
+#defaultContentLanguageInSubdir: true
+uglyURLs: false
+newContentEditor: /usr/bin/vim
+blackfriday:
+    hrefTargetBlank: true
+permalinks:
+    default: /:slug
+    blog: /:year/:month/:day/:slug
+params:
+    disqusShortname: endreszabo
+    Subtitle: "end.re shares his thoughts with you"
+    Description: "yet another tech blog with underdeveloped thoughts, quick and dirty tips and tricks, random ramblings"
+    AuthorName: "Endre Szabo"
+    Author: "Endre Szabo"
+    monthNames:
+        1: Jan
+        2: Feb
+        3: Mar
+        4: Apr
+        5: May
+        6: Jun
+        7: Jul
+        8: Aug
+        9: Sep
+        10: Oct
+        11: Nov
+        12: Dec
+Author: "Endre Szabo"
+menu:
+    main:
+      - url: '/about.html'
+        name: 'about'
+        weight: 0
+      - url: '/archives.html'
+        name: 'Archives'
+        weight: 1
+      - url: '/contacts.html'
+        name: 'Contacts'
+        weight: 2
+Languages:
+    en:
+        weight: 1
+    hu:
+        params:
+            subtitle: end.re megosztja a gondolatait veled
+            monthNames:
+                1: Jan
+                2: Feb
+                3: Már
+                4: Ápr
+                5: Máj
+                6: Jún
+                7: Júl
+                8: Aug
+                9: Szept
+                10: Okt
+                11: Nov
+                12: Dec
+        weight: 2
+        navigation:
+            about: Rólam
+        Author: "Szabó Endre"
+        menu:
+            main:
+              - url: '/rolam.html'
+                name: 'Rólam'
+                weight: 0
+              - url: '/archivum.html'
+                name: 'Archívum'
+                weight: 1
+              - url: '/kapcsolat.html'
+                name: 'Kapcsolat'
+                weight: 2
