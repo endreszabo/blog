@@ -1,6 +1,7 @@
 ---
 title: "WiFi + Ethernet bondingja"
-date: "2010-07-24T00:00:00"
+date: "2010-05-24T00:00:00"
+lastmod: "2010-07-24T00:00:00"
 postcode: EBP003
 comments: true
 slug: "ebp003_wifi-es-ethernet-bondingja"
