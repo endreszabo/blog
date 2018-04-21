@@ -4,6 +4,8 @@ date: 2016-08-10T00:00:00
 postcode: ett001
 comments: true
 slug: "ett001_applied-strongswanism"
+categories:
+  - tutorial
 tags:
   - ipsec
   - strongswan
@@ -43,7 +45,7 @@ But first I think there is a need for clarification on IPSec related definitions
 
 As this writing aims to be a practical guidance I will not cover additional terms like low-level cryptographic primitives, transport/tunnel modes.
 
-## <a name="#req"></a>2. Prerequisites
+## 2. Prerequisites
 
 To establish an IPSec connection we need two peer hosts. Server and client roles are generally not distinguished. At home I've got a server that runs Arch Linux with the latest strongSwan. My clients are Android smartphones, other Arch Linuxes and occasionally Windows clients.
 
@@ -53,7 +55,7 @@ I assume that you have installed strongSwan (from AUR for example) on your hosts
 
 Among the first questions to decide is to which authentication mechanism we'd like to use.
 
-### <a name="#certs"></a>2.1. X509 Certificates
+### 2.1. X509 Certificates
 
 During authentication we will heavely rely on X509 aka. Public Key Infrastructure (PKI) certificates and private keys. This industry standard authentication helps us ensure authenticity of hosts and symmetric encryption keys much akin to how secure web and email communication works with standard TLS.
 

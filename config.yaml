@@ -42,19 +42,25 @@ params:
 Author: "Endre Szabo"
 menu:
     main:
-      - url: '/about.html'
-        name: 'about'
+      - url: '/about/'
+        name: 'About'
         weight: 0
-      - url: '/archives.html'
-        name: 'Archives'
+      - url: '/blog/'
+        name: 'Blog'
         weight: 1
-      - url: '/contacts.html'
-        name: 'Contacts'
-        weight: 2
+      - url: '/tutorial/'
+        name: 'Tutorials'
+        weight: 1.5
+axonomies:
+    tags: "tags"
+    categories: "categories"
 Languages:
     en:
         weight: 1
     hu:
+        taxonomies:
+            tags: "címkék"
+            categories: "kategóriák"
         params:
             subtitle: end.re megosztja a gondolatait veled
             monthNames:
@@ -76,12 +82,12 @@ Languages:
         Author: "Szabó Endre"
         menu:
             main:
-              - url: '/rolam.html'
+              - url: '/rolam/'
                 name: 'Rólam'
                 weight: 0
-              - url: '/archivum.html'
-                name: 'Archívum'
+              - url: '/hu/blog/'
+                name: 'Blog'
                 weight: 1
-              - url: '/kapcsolat.html'
-                name: 'Kapcsolat'
-                weight: 2
+              - url: '/hu/tutorial/'
+                name: 'Tutorialok'
+                weight: 1.5

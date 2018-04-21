@@ -5,6 +5,8 @@ external-url:
 date: 2016-03-28T00:00:00
 lastmod: 2016-08-18T00:00:00
 slug: "ebp002-vti-tunnel-interface-with-strongswan"
+categories:
+  - tutorial
 tags: 
   - ipsec
 meta:
@@ -71,6 +73,6 @@ install_virtual_ip = no
 
 ```
 
-###### Update
+###### Update 
 
 Thermi has turned this blog post and other related informations into a [strongSwan wiki entry](https://wiki.strongswan.org/projects/strongswan/wiki/RouteBasedVPN). Please be sure to check that out too.
