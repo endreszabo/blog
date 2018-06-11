@@ -1,19 +1,26 @@
 ---
-title: "The pdnsapp&mdash;part 1"
+title: "The pdnsapp - part 1"
 date: "2015-07-09T05:59:00"
-comments: true
+categories:
+  - Proof of Concept
+tags:
+  - dns
 params:
   hideTitle: false
   hideMeta: false
   hideComments: false
   hideTOC: true
+  hideNav: false
+  hideLicenceButton: false
+  hideFooterNote: false
+  hideHeader: false
+#  indexImage: bridge.jpg
+#  indexImagePercent: 20
+#  importHighlight: true
+#  importAsciinema: true
   postcode: EBP005
 slug: "ebp005_the-pdnsapp-part1.html"
 aliases: ['/ebp005']
-categories:
-  - Proof of Concept
-tags:
-  - dns
 ---
 
 One of my projects called `pdnsapp` is a [Python](https://www.python.org/) based microframework aimed to help develop DNS based applications, very much like [Flask](http://flask.pocoo.org) or [Bottle](http://bottlepy.org/) do for HTTP or like [Lamson](http://lamsonproject.org/) does with SMTP. Like most of the frameworks of this kind it needs an 'application server' to run. This server for `pdnsapp` is currently [PowerDNS](http://www.powerdns.com/). For basic functionality it has no dependencies other than the Python standard libraries.<!--more-->

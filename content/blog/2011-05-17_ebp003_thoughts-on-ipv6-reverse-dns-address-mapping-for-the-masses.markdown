@@ -12,6 +12,14 @@ params:
   hideMeta: false
   hideComments: false
   hideTOC: true
+  hideNav: false
+  hideLicenceButton: false
+  hideFooterNote: false
+  hideHeader: false
+#  indexImage: bridge.jpg
+#  indexImagePercent: 20
+  importHighlight: true
+#  importAsciinema: true
   postcode: EBP003
 ---
 

@@ -1,4 +1,5 @@
 ---
+aliases: ['/ebp036', '/archzfs-kernels']
 tags:
   - linux
   - zfs
@@ -15,7 +16,6 @@ params:
   importAsciinema: true
 slug: "ebp036_archzfs-repo-for-kernels"
 draft: true
-aliases: ["/ebp036"]
 Title: "ArchZFS companion repo for dependent kernel versions"
 Date: 2018-05-31T21:33:58
 ---
@@ -145,6 +145,6 @@ If you want to have headers (for using other DKMS modules like VirtualBox host m
 
 If the upgrade process happens to fail, and linux kernel package is installed.
 
-{{< asciinema src="teszt.json" >}}
+{{< asciinema src="teszt.asciinema" >}}
 
 warning: linux-lts-4.14.41-1 is up to date -- reinstalling

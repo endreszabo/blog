@@ -1,12 +1,9 @@
 ---
-tags:
-  - networking
-  - dns
-  - powerdns
-  - nginx
-  - ipsec
-categories:
-  - Tutorial
+címkék:
+  - beágyazott
+  - otthonautomatizálás
+kategóriák:
+  - Proof of Concept
 params:
   hideTitle: false
   hideMeta: false
@@ -20,8 +17,12 @@ params:
 #  indexImagePercent: 20
 #  importHighlight: true
 #  importAsciinema: true
-  postcode: ETP000
-slug: "etp000_"
+  postcode: EBP015
+slug: "ebp015_enabling-the-second-spi-bus-on-the-raspberry-pi-2-and-3"
 draft: true
+aliases: ["/ebp015"]
+Title: "Enabling the second SPI bus on the Raspberry PI 2 and 3"
+Date: 2017-06-24T11:58:18
 ---
+
 

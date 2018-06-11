@@ -3,25 +3,30 @@ date: 2017-05-07T16:48:40+02:00
 draft: false
 menu: "myabout"
 params:
+  hideTOC: false
+  hideNav: true
+  hideLicenceButton: false
+  hideFooterNote: false
+  hideHeader: false
   hideComments: true
   hideMeta: true
   hideDate: true
   hideTitle: true
   postcode: ERP001
-  toc: true
 slug: "about"
 title: About end.re
+aliases: ['/rolam']
 ---
 
-###### TL;DR:
+TL;DR: Techblog old school hacker; father; wannabe expat; introversion, intuition, thinking, perceiving
 
-Old school hacker; father; wannabe expat; introversion, intuition, thinking, perceiving
-
-## What is this
+## What is this?
 
 Welcome. You have arrived. This is my blog, that actually most of the time stands for a techblog.
 
 Here you can find my actual ramblings about various fields of IT, most of the time in the area of Linux, networking and IoT.
+
+This blog was always a static site. I started with the static site generator called Blogofile. Sadly, it got abandoned. After that I moved to MWeb which uses Octopress which is kind of a fork of Jekyll. But it was for macOS only. Finally I settled with Hugo, 'The world’s fastest framework for building websites'.
 
 ## Disclaimer
 
@@ -29,4 +34,4 @@ Now for all the usual mumbo-jumbo. Posts are my own. Opinions expressed are sole
 
 ### Usage of JavaScript
 
-I know. You know. We all know. JavaScript can do evil, therefore it is considered evil. The site is functional without JavaScript, however I use JavaScript ~~for Google Analytics~~ to wrap the comments section provided by Disqus which is also based on JavaScript.
+I know. JavaScript can do evil, therefore it is considered evil. The site is entirely functional without JavaScript, however I use JavaScript ~~for Google Analytics~~ to wrap the comments section provided by Disqus which is also based on JavaScript. Syntax highlighting and Asciinema session playbacks also use JavaScript, served from the website itself, so uMatrix and his friends won't shout loud.

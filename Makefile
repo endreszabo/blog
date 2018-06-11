@@ -3,9 +3,10 @@ CSS=/a/s.css
 # Default to build css, and html and push to staging server
 all: staging
 render_webpage: render_css render_html
+render_prod_webpage: render_css render_prod_html
 minimize_text: minify_text gzip_text
 # Tiers
-prod: render_webpage minimize_text install_prod
+prod: render_prod_webpage minimize_text install_prod
 staging: render_webpage install_staging
 staging_minimized: render_webpage minimize_text install_staging
 pgnd: render_css pgnd_server
@@ -21,6 +22,8 @@ render_css:
 	#scss -r compass themes/hugo-theme-end.re/sass/screen.scss static$(CSS)
 	#scss themes/hugo-theme-end.re/sass/screen.scss static$(CSS)
 	sassc -t compressed themes/hugo-theme-end.re/sass/screen.scss static$(CSS)
+render_prod_html:
+	hugo --log --verbose --i18n-warnings --cleanDestinationDir --baseURL https://end.re
 render_html:
 	hugo --log --verbose --i18n-warnings --cleanDestinationDir
 minify_text:

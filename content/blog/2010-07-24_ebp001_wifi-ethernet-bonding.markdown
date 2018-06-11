@@ -1,22 +1,30 @@
 ---
-title: "WiFi + Ethernet bonding"
-date: "2010-05-24T00:00:00"
-lastmod: "2010-07-24T00:00:00"
-params:
-  hideComments: false
-  hideMeta: false
-  hideTOC: true
-  hideTitle: false
-  postcode: EBP001
-slug: "ebp001_wifi-ethernet-bonding"
 tags:
   - networking
-ories:
+categories:
   - Proof of Concept
+params:
+  hideTitle: false
+  hideMeta: false
+  hideComments: false
+  hideTOC: true
+  hideNav: false
+  hideLicenceButton: false
+  hideFooterNote: false
+  hideHeader: false
+  indexImage: wifiethernet4.png
+  indexImagePercent: 20
+  importHighlight: false
+  importAsciinema: false
+  postcode: EBP001
+slug: "ebp001_wifi-ethernet-bonding"
 aliases: ['/ebp001/']
+Title: "WiFi + Ethernet bonding"
+Date: "2010-05-24T00:00:00"
+lastmod: "2010-07-24T00:00:00"
 ---
 
-When I'm at home, I *dislike* undocking my laptop to move around the house because of the Ethernet-to-WiFi switchover takes long seconds and all my TCP sessions like SSH get lost. It's because my laptop is assigned a different IP address on WiFi and on the wired network even if they belong to the same VLAN. Weel, it looks like this is not the case any more.<!--more-->
+When I'm at home, I *dislike* undocking my laptop to move around the house because of the Ethernet-to-WiFi switchover takes long seconds and all my TCP sessions like SSH get lost. It's because my laptop is assigned a different IP address on WiFi and on the wired network even if they belong to the same VLAN. Well, it looks like this is not the case any more.<!--more-->
 
 ## The solution
 
@@ -26,7 +34,7 @@ Today I was thinking of bonding, a stuff used to do failover/loadbalancing on wi
 
 In [this video](https://vimeo.com/41582323) I demonstrate the setup in use, where a bond0 interface is active on the primary wired eth0 that fails over to wlan0 upon disconnection of the wired ethernet cable. The failover (and failback) happens amazlingly fast, virtually no interrupt can be observed as you can see in this video:
 
-<center><iframe style="border:2px solid #ccc" src="http://player.vimeo.com/video/41582323?title=1&amp;byline=0&amp;portrait=0&amp;color=f2f2f2" width="500" height="331" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><br />Wifi-Ethernet bonding convergence in action</center>
+<center><iframe style="border:0px solid #ccc" src="http://player.vimeo.com/video/41582323?title=1&amp;byline=0&amp;portrait=0&amp;color=f2f2f2" width="100%" height="400" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><br />Wifi-Ethernet bonding convergence in action</center>
 
 ## Integration into the everydays
 

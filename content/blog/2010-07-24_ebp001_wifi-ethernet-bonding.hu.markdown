@@ -3,10 +3,19 @@ title: "WiFi és Ethernet bondingja"
 date: "2010-05-24T00:00:00"
 lastmod: "2010-07-24T00:00:00"
 params:
-  hideComments: false
-  hideMeta: false
-  hideTOC: true
   hideTitle: false
+  hideMeta: false
+  hideComments: false
+  hideTOC: true
+  hideNav: false
+  hideLicenceButton: false
+  hideFooterNote: false
+  hideHeader: false
+  indexImage: wifiethernet4.png
+#  indexImage: bridge.jpg
+#  indexImagePercent: 20
+#  importHighlight: true
+#  importAsciinema: true
   postcode: EBP001
 slug: "ebp001_wifi-es-ethernet-bondingja"
 címkék:

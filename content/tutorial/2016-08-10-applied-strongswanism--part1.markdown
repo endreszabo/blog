@@ -1,18 +1,24 @@
 ---
 title: "Applied strongSwanism"
 date: 2016-08-10T00:00:00
-postcode: ett001
-comments: true
-slug: "ett001_applied-strongswanism"
+slug: "etp002_applied-strongswanism"
 categories:
   - tutorial
-tags:
+tags: 
   - ipsec
   - strongswan
-Params:
-    code: ett001
-    docclass: tutorial
-headerimage: "/images/world-1264062_1280.jpg"
+params:
+  hideTitle: false
+  hideMeta: false
+  hideComments: false
+  hideTOC: false
+  hideNav: false
+  hideLicenceButton: false
+  hideFooterNote: false
+  hideHeader: false
+  postcode: etp002
+  headerimage: world-1264062_1280.jpg
+draft: true
 ---
 Being on strongSwan IRC support channel at freenode for quite a period I see somewhat general configuration question repeatedly asked. I decided to make a series of posts to help people configure strongSwan for some very tipical usage scenarios. This will include site&ndash;to&ndash;site (where two Linux instances run strongSwan) and client&ndash;server (desktop and mobie clients using secure VPN) connections. I wouldn't call myself an in-depth expert on the topic but I've dealt with various IPSec setups involving openswan, strongSwan, cisco ASA appliances and the like.<!--more-->
 

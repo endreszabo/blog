@@ -11,8 +11,6 @@ params:
   hideTOC: true
   postcode: EBP037
 slug: "ebp037_martian-source-or-destination-traffic-explained"
-draft: true
-
 aliases: ["/ebp037", "/martian"]
 Title: "Linux Kernel Martian Source Logs Explained"
 Date: 2018-06-07T08:39:19

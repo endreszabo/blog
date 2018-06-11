@@ -17,7 +17,6 @@ params:
   hideLicenceButton: false
   hideFooterNote: false
   hideHeader: false
-  postcode: EBP039
 #  indexImage: bridge.jpg
 #  indexImagePercent: 20
 #  importHighlight: true

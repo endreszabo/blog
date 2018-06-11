@@ -1,20 +1,24 @@
 ---
 title: "VTI Tunnel Interface with strongSwan"
-postcode: EBP002
-external-url:
-date: 2016-03-28T00:00:00
-lastmod: 2016-08-18T00:00:00
-slug: "ebp002-vti-tunnel-interface-with-strongswan"
+date: 2015-01-06T00:00:00
+slug: "etp001-vti-tunnel-interface-with-strongswan"
 categories:
   - tutorial
 tags: 
   - ipsec
-meta:
-    docclass: "Proof of Concept"
-    code: epc001
-    gtoc: false
-    gnotoc: true
-    indexImage: strongswanlogo.png
+  - strongswan
+params:
+  hideTitle: false
+  hideMeta: false
+  hideComments: false
+  hideTOC: false
+  hideNav: false
+  hideLicenceButton: false
+  hideFooterNote: false
+  hideHeader: false
+  postcode: etp001
+  indexImage: strongswanlogo.png
+aliases: ['etp001', '2015-01-06_vti-tunnel-interface-with-strongswan.html']
 ---
 
 I successfully managed to get Linux VTI (Virtual Tunnel Interface) working with strongSwan. By using VTI it is no longer needed to rely on the routing policy database, making understanding and maintaining routes easier. Also with VTI you can see the cleartext traffic on the VTI interface itself. It was confusing to see actual tunnel traffic before using `tcpdump` using the standard policy database setup. (There are `ulog`/`nflog` hacks to see cleartext traffic in both direction though, similar to BSD `pflog`.)<!--more-->
