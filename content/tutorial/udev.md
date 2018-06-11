@@ -8,9 +8,9 @@ params:
   postcode: ETP000
 slug: "etp000_udev"
 tags:
-- udev
+- linux
 - zfs
-title: "Semi automated offline backups powered with udev"
+title: "Semi automated ZFS takeaway backups"
 ---
 
 ## Introduction

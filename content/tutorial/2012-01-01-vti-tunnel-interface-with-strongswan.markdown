@@ -12,11 +12,12 @@ tags:
 meta:
     docclass: "Proof of Concept"
     code: epc001
+    gtoc: false
+    gnotoc: true
+    indexImage: strongswanlogo.png
 ---
 
-I successfully managed to get Linux VTI (Virtual Tunnel Interface) working with strongSwan. By using VTI it is no longer needed to rely on the routing policy database, making understanding and maintaining routes easier. Also with VTI you can see the cleartext traffic on the VTI interface itself. It was confusing to see actual tunnel traffic before using `tcpdump` using the standard policy database setup. (There are `ulog`/`nflog` hacks to see cleartext traffic in both direction though, similar to BSD `pflog`)
-
-<!--more-->
+I successfully managed to get Linux VTI (Virtual Tunnel Interface) working with strongSwan. By using VTI it is no longer needed to rely on the routing policy database, making understanding and maintaining routes easier. Also with VTI you can see the cleartext traffic on the VTI interface itself. It was confusing to see actual tunnel traffic before using `tcpdump` using the standard policy database setup. (There are `ulog`/`nflog` hacks to see cleartext traffic in both direction though, similar to BSD `pflog`.)<!--more-->
 
 With policy database strongSwan installs its learned policy routes to a separate routing table having preference over the main routing table. strongSwan does not support native VTI setup so a `<left|right>updown` script is needed to setup the tunnel this way.
 
@@ -73,6 +74,6 @@ install_virtual_ip = no
 
 ```
 
-###### Update 
+##### Update 
 
 Thermi has turned this blog post and other related informations into a [strongSwan wiki entry](https://wiki.strongswan.org/projects/strongswan/wiki/RouteBasedVPN). Please be sure to check that out too.
