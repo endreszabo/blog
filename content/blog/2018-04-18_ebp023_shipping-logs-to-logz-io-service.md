@@ -7,7 +7,7 @@ params:
   hideTitle: false
   hideMeta: false
   hideComments: false
-  hideTOC: false
+  hideTOC: true
   hideNav: false
   hideLicenceButton: false
   hideFooterNote: false
@@ -25,7 +25,7 @@ Title: "Shipping logs to the logz.io service"
 Date: 2018-04-17T09:43:18
 ---
 
-Some of you may have heard of [Logz.io](https://logz.io/), a yet-another-company that provides *ELK as a Service*. Their marketing is quite good, they have great newsletters, tutorials and webcasts, so I thought to myself to let's check 'em out. After registration you are taken to the wiki entry that lets you configure your stuff to ship your logs logz.io ingest servers. While it looks pretty comprehensive, they evidently missed out the good old Unix player here, `syslog-ng`. Seeing configuration guides for all these "next-gen", "cloud-native", "serverless" totally hyped piece of craps without mentioning `syslog-ng` at all I feel being kinda old school.
+Some of you may have heard of [Logz.io](https://logz.io/), a yet-another-company that provides *ELK as a Service*. Their marketing is quite good, they have great newsletters, tutorials and webcasts, so I thought to myself to let's check 'em out. After registration you are taken to the wiki entry that lets you configure your gear to ship your logs logz.io ingest servers. While the wiki looks pretty comprehensive, they evidently missed out the good old Unix player here, `syslog-ng`. Seeing configuration guides for all these "next-gen", "cloud-native", "serverless" totally hyped piece of craps without mentioning `syslog-ng` at all I feel being kinda old school.
 
 So this post is the missing manual on how to ship logs to logz.io using `syslog-ng`.<!--more-->
 
@@ -33,7 +33,7 @@ Logz.io uses the all-new RFC5424 "The Syslog Protocol" for transporting the mess
 
 For log shipping to work we need two new entries in the `syslog-ng.conf`.
 
-The first one is the template with your assigned logz.io account token between the `[]`:
+The first one is the customized RFC5424 lookalike `template` with your assigned logz.io account token between the `[]`. You can find your token by clicking on the cogwheel (Account) icon on the upper right hand side of the screen. On the appearing page, you can find your token below the Account settings part of the page.
 
 ```
 template t_logzio {
@@ -42,7 +42,7 @@ template t_logzio {
 };
 ```
 
-Then we need a destination driver that makes the connection to logz.io log stream ingest servers.
+Then we need a `network` type `destination` driver that makes the TLS connection to logz.io logging stream ingest servers.
 
 ```
 destination d_network_logzio {
