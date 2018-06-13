@@ -10,6 +10,7 @@ params:
   hideComments: false
   hideTOC: true
   postcode: EBP035
+  unlisted: true
 slug: "ebp035_flook-webet-karcol"
 draft: true
 

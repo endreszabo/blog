@@ -9,9 +9,9 @@ params:
   hideComments: false
   hideTOC: true
   postcode: EBP033
+  unlisted: true
 slug: "ebp033_flook-the-missing-manual"
-draft: true
-
+draft: false
 aliases: ["/hu/ebp033", "/flook"]
 Title: "flook: the missing manual"
 Date: 2018-04-25T07:43:48

@@ -6,23 +6,15 @@ tags:
 categories:
   - Proof of Concept
 params:
-  hideTitle: false
-  hideMeta: false
-  hideComments: false
-  hideTOC: true
   postcode: EBP036
   indexImage: archzfs.png
-  indexImagePercent: 20
-  importAsciinema: true
 slug: "ebp036_archzfs-repo-for-kernels"
-draft: true
+draft: false
 Title: "ArchZFS companion repo for dependent kernel versions"
 Date: 2018-05-31T21:33:58
 ---
 
-As per the ArchZFS repository: ''occasionally the OpenZFS project gets behind on stable support for the latest Linux Kernel release. This means that if Linux 4.15 is released to core, but the latest stable release of OpenZFS does not support Linux 4.15, it is not possible to perform a system update. Sometimes it can take a few days, a few weeks, or a month to release a new stable version of OpenZFS''.
-
-Based on the good ol' Gentoo memories, you might think that the package manager of this ultramodern distribution surely can handle different kernel versions installed at the same time? Unfortunately, the implementation reality of `pacman`, the package manager of ArchLinux follows a different stereotype.
+As per the ArchZFS repository README: ''occasionally the OpenZFS project gets behind on stable support for the latest Linux Kernel release. This means that if Linux 4.15 is released to core, but the latest stable release of OpenZFS does not support Linux 4.15, it is not possible to perform a system update. Sometimes it can take a few days, a few weeks, or a month to release a new stable version of OpenZFS''. Based on the good ol' Gentoo memories, you might think that the package manager of this ultramodern distribution surely can handle different kernel versions installed at the same time? Unfortunately, the implementation reality of `pacman`, the package manager of ArchLinux follows a different stereotype.
 
 See my ArchZFS-compatible kernel packages repository that offers a solution for this problem.<!--more-->
 
@@ -143,8 +135,36 @@ If you want to have headers (for using other DKMS modules like VirtualBox host m
 # pacman -Su linux-lts{,-headers}=4.14.41-1
 ```
 
-If the upgrade process happens to fail, and linux kernel package is installed.
+### After upgrading again
 
-{{< asciinema src="teszt.asciinema" >}}
+A regular ArchLinux upgrade fails when the stable kernel package is newer than the one ArchZFS module packages are compiled against:
 
-warning: linux-lts-4.14.41-1 is up to date -- reinstalling
+```
+# pacman -Syu
+:: Synchronizing package databases...
+ core                      129.7 KiB  12.7M/s 00:00 [----------] 100%
+ extra                    1620.4 KiB  26.4M/s 00:00 [----------] 100%
+ community                   4.4 MiB  88.3M/s 00:00 [----------] 100%
+ multilib                  170.8 KiB  0.00B/s 00:00 [----------] 100%
+ archzfs is up to date
+ archzfs-kernels is up to date
+resolving dependencies...
+looking for conflicting packages...
+error: failed to prepare transaction (could not satisfy dependencies)
+:: installing linux-lts (4.14.45-1) breaks dependency 'linux-lts=4.14.41-1' required by spl-linux-lts
+:: installing linux-lts (4.14.45-1) breaks dependency 'linux-lts=4.14.41-1' required by zfs-linux-lts
+```
+
+If your most recent ArchZFS matching linux kernel modules and other ZFS packages are already installed, you've got no other options than to ignore the upgradde of the newer kernel packages until the ArchZFS repository keeps up again:
+
+```
+# pacman -Su --ignore=linux-lts{,-headers}
+:: Starting full system upgrade...
+warning: linux-lts: ignoring package upgrade (4.14.41-1 => 4.14.45-1)
+warning: linux-lts-headers: ignoring package upgrade (4.14.41-1 => 4.14.45-1)
+resolving dependencies...
+looking for conflicting packages...
+
+Package (50)         Old Version   New Version   Net Change   Download Size
+[... upgrading of other packages proceeds as usual ...]
+```

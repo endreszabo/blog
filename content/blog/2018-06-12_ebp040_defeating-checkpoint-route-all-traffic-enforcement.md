@@ -48,4 +48,3 @@ This is what the CheckPoint client thinks:
 This is how PuTTY's `plink.exe` manages to establish port forwards:
 
 {{< img src="1528807151.png" title="plink" link="" alt="how putty sees the connection on the client side" caption="" attr="" attrlink="" class="center arnyek" >}}
-{{< img src="imperial_vs__metric_by_nekit1234007-d5p0ou5.png" title="imperial_vs__metric_by_nekit1234007-d5p0ou5.png" link="" alt="" caption="" attr="" attrlink="" class="center" >}}

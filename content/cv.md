@@ -9,6 +9,7 @@ params:
   hideToc: true
   hideNav: true
   postcode: ERP000
+  unlisted: true
 slug: "cv"
 title: cv
 ---

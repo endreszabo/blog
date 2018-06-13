@@ -14,6 +14,7 @@ params:
   hideMeta: false
   hideComments: false
   hideTOC: true
+  unlisted: true
   postcode: EBP033
 slug: "ebp033_flook-the-missing-manual"
 draft: true

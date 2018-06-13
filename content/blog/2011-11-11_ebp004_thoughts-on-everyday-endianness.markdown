@@ -30,6 +30,8 @@ Just a quick note on 11/11/11: I'd like to express how awesome big-endian is in 
 
 <!--more-->
 
+{{< img src="imperial_vs__metric_by_nekit1234007-d5p0ou5.png" title="imperial_vs__metric_by_nekit1234007-d5p0ou5.png" link="" alt="" caption="" attr="" attrlink="" class="center" >}}
+
 For example, in hungarian language, the date of today is usually expressed like:
 
 	longest form: 2011. november 11, péntek. (YYYY-MM-DD, day-of-week)
@@ -51,3 +53,4 @@ Budapest (most significan data) is the capitcal city of Hungary, 'V. kerület' m
 Soon there will be 11:11:11 UTC that can be representated as `2011-11-11T11:11:11Z` according to the ISO8601 standard. The standard is pretty straightforward, no confusion at all.
 
 So please, let's use big-endian representation every where. Please.
+

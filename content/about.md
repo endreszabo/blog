@@ -12,6 +12,7 @@ params:
   hideMeta: true
   hideDate: true
   hideTitle: true
+  unlisted: true
   postcode: ERP001
 slug: "about"
 title: About end.re
