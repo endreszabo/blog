@@ -18,7 +18,7 @@ params:
   importAsciinema: false
   postcode: EBP001
 slug: "ebp001_wifi-ethernet-bonding"
-aliases: ['/ebp001/']
+aliases: ['/ebp001/', '2015-07-09_wifi-ethernet-bonding.html']
 Title: "WiFi + Ethernet bonding"
 Date: "2010-05-24T00:00:00"
 lastmod: "2010-07-24T00:00:00"

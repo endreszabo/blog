@@ -8,6 +8,7 @@ categories:
 params:
   postcode: EBP036
   indexImage: archzfs.png
+  importAsciinema: true
 slug: "ebp036_archzfs-repo-for-kernels"
 draft: false
 Title: "ArchZFS companion repo for dependent kernel versions"
@@ -52,7 +53,7 @@ error: failed to prepare transaction (could not satisfy dependencies)
 :: spl-linux-lts: installing linux-lts (4.14.44-1) breaks dependency 'linux-lts=4.14.41-1'
 :: zfs-linux-lts: installing linux-lts (4.14.44-1) breaks dependency 'linux-lts=4.14.41-1'
 ```
-And *bam*, nonexistent kernel version is needed. A new kernel is available for installing, at the time of writing this post:
+And *bam*, the required kernel is not in the official core repo anymore. Only a newer kernel is available, at the time of writing this post it is:
 
 ```
 # pacman -Ss ^linux-lts$ 
@@ -60,7 +61,7 @@ core/linux-lts 4.14.44-1 [installed: 4.14.36-1]
     The Linux-lts kernel and modules
 ```
 
-See the following timeline to be more clear on what this repo can do for you:
+See the following timeline to be more clear on what is happening and what this repo can do for you:
 
 | Kernel version | Situation | Means that |
 |:-:|:-:|:-:|
@@ -134,6 +135,10 @@ If you want to have headers (for using other DKMS modules like VirtualBox host m
 ```sh
 # pacman -Su linux-lts{,-headers}=4.14.41-1
 ```
+
+### See in it action
+
+{{< asciinema src="archzfs-companion-demo.asciinema" >}}
 
 ### After upgrading again
 

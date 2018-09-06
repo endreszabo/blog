@@ -2,6 +2,7 @@
 .sass-cache/
 public/
 static/pimg
+static/p
 static/css/screen.css*
 bin/deploy.sh
 TODO

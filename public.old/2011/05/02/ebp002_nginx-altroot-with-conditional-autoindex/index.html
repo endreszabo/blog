@@ -1,0 +1,48 @@
+<!doctype html><title>Nginx Alternative Root With Conditional Autoindexing :: end.re</title><link href rel=alternate type=application/rss+xml title=end.re><link rel="shortcut icon" href=/favicon.png><link href=/a/s.css media=screen rel=stylesheet><link href=/css/h.css rel=stylesheet><script>const enable_comments=function(){document.getElementById("button_enable_comments").style.display='none';var disqus_config=function(){this.page.url="https://end.re//";this.page.identifier="";};var d=document,s=d.createElement('script');s.src='https://endreszabo.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);}</script><link href=http://gmpg.org/xfn/11 rel=profile><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=theme-color content=#fafafa><meta property=og:title content="Nginx Alternative Root With Conditional Autoindexing"><meta property=og:description content="yet another tech blog with underdeveloped thoughts, quick and dirty tips and tricks, random ramblings"><meta property=og:type content=website><meta property=og:locale content=en_US><meta property=og:url content=https://end.re/2011/05/02/ebp002_nginx-altroot-with-conditional-autoindex/><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="yet another tech blog with underdeveloped thoughts, quick and dirty tips and tricks, random ramblings"><meta name=keywords content=nginx><meta name=author content="Endre Szabo"><meta name=generator content="Hugo 0.40.2"><header class=header-main><div class=logo><a title=end.re href=https://end.re><img src=/images/el.svg alt=logo width=90 class=logo-main></a></div><div class=nav><nav class=main-nav><ul><li><a href=/blog/>Blog</a><li><a href=/tutorial/>Tutorials</a><li><a href=/about/>About</a></ul></nav></div></header><main class=wrapper-main><section class=wrapper-content><section class=post-index itemscope itemtype=http://schema.org/BlogPosting><article class=post-content><div class=post-header><h2 class=post-title itemprop=name>Nginx Alternative Root With Conditional Autoindexing</h2><span class=a-meta><a class=category-proof-of-concept href=/categories/proof-of-concept/>Proof of Concept</a></span>
+<span class=m-split><a class=tag-nginx href=/tags/nginx/>#nginx</a></span>
+<time class=m-split datetime=2011-05-02T00:00:00&#43;00:00>May 2nd, 2011</time></div><div class="entry-content full-article" itemprop=articleBody><p>Recently I have developed the following Nginx setup to make my virtual host instance more advanced. It has the following features:<ul><li>The blog root directory served from a completely different directory than the regular <code>htdocs</code> root. Blog content has preference over the other files, so if the requested file is not found in the blog root, it falls back to the regular root.<li>There is a feature for conditional autoindexing (I don&rsquo;t like to expse my files by default): if I put a <code>.index</code> file into a directory, it will be publicly autoindexed, otherwise Nginx returns a 404 error (as instead on the default 403).<li>Handles <code>error_page</code> idoms well.</ul><p><p>So far my development server has this configuration:<div class=highlight><pre class=chroma><code class=language-nginx data-lang=nginx><span class=k>server</span> <span class=p>{</span>
+	<span class=kn>listen</span> <span class=s>[::]:80</span><span class=p>;</span>
+	<span class=kn>server_name</span> <span class=s>end.re</span><span class=p>;</span>
+	<span class=kn>charset</span> <span class=s>utf-8</span><span class=p>;</span>
+	<span class=kn>access_log</span> <span class=s>/var/www/end.re/logs/nginx.log</span> <span class=s>csv-http</span><span class=p>;</span>
+	<span class=kn>root</span> <span class=s>/var/www/end.re/blog/_site</span><span class=p>;</span>
+	<span class=kn>index</span> <span class=s>index.html</span> <span class=s>index.xml</span><span class=p>;</span>
+	<span class=kn>error_page</span> <span class=mi>400</span> <span class=mi>403</span> <span class=mi>404</span> <span class=s>/error_pages/404.html</span><span class=p>;</span>
+	<span class=kn>error_page</span> <span class=mi>500</span> <span class=mi>502</span> <span class=mi>504</span> <span class=s>/error_pages/500.html</span><span class=p>;</span>
+	<span class=kn>error_page</span> <span class=mi>503</span> <span class=s>/error_pages/503.html</span><span class=p>;</span>
+	<span class=kn>autoindex</span> <span class=no>on</span><span class=p>;</span>
+	<span class=kn>autoindex_exact_size</span> <span class=no>off</span><span class=p>;</span>
+
+	<span class=kn>recursive_error_pages</span>   <span class=no>off</span><span class=p>;</span>
+	<span class=kn>location</span> <span class=p>~</span><span class=sr>*</span> <span class=s>^/(404\.html|500\.html|503\.html)</span>$ <span class=p>{</span>
+		<span class=kn>log_not_found</span> <span class=no>off</span><span class=p>;</span>
+		<span class=kn>error_page</span> <span class=mi>404</span> <span class=p>=</span> <span class=s>@error</span><span class=p>;</span>
+	<span class=p>}</span>
+	<span class=kn>location</span> <span class=s>/error_pages</span> <span class=p>{</span>
+		<span class=kn>internal</span><span class=p>;</span>
+	<span class=p>}</span>
+	<span class=kn>location</span> <span class=s>/</span> <span class=p>{</span>
+		<span class=kn>try_files</span> <span class=nv>$uri</span> <span class=nv>$uri/</span> <span class=s>@fallback</span><span class=p>;</span>
+	<span class=p>}</span>
+	<span class=kn>location</span> <span class=s>@fallback</span> <span class=p>{</span>
+		<span class=kn>root</span> <span class=s>/var/www/end.re/htdocs</span><span class=p>;</span>
+		<span class=kn>try_files</span> <span class=nv>$uri</span> <span class=nv>$uri/</span> <span class=s>@error</span><span class=p>;</span>
+		<span class=kn>log_not_found</span> <span class=no>off</span><span class=p>;</span>
+		<span class=kn>if</span> <span class=s>(-d</span> <span class=nv>$request_filename</span><span class=s>)</span> <span class=p>{</span>
+			<span class=kn>set</span> <span class=nv>$req</span> <span class=s>D</span><span class=p>;</span>
+		<span class=p>}</span>
+		<span class=kn>if</span> <span class=s>(!-f</span> <span class=nv>$request_filename/.index</span><span class=s>)</span> <span class=p>{</span>
+			<span class=kn>set</span> <span class=nv>$req</span> <span class=s>&#34;</span><span class=nv>${req}N&#34;</span><span class=p>;</span>
+		<span class=p>}</span>
+		<span class=kn>if</span> <span class=s>(-f</span> <span class=nv>$request_filename/index.html</span><span class=s>)</span> <span class=p>{</span>
+			<span class=kn>set</span> <span class=nv>$req</span> <span class=s>OK</span><span class=p>;</span>
+		<span class=p>}</span>
+		<span class=kn>if</span> <span class=s>(</span><span class=nv>$req</span> <span class=p>=</span> <span class=s>DN)</span> <span class=p>{</span>
+			<span class=kn>return</span> <span class=mi>404</span><span class=p>;</span>
+		<span class=p>}</span>
+	<span class=p>}</span>
+	<span class=kn>location</span> <span class=s>@error</span> <span class=p>{</span>
+		<span class=kn>log_not_found</span> <span class=no>on</span><span class=p>;</span>
+		<span class=kn>root</span> <span class=s>/var/www/end.re/blog/_site/error_pages</span><span class=p>;</span>
+	<span class=p>}</span>
+<span class=p>}</span></code></pre></div><p>Please see my <a href=/fusi-rx900/>FuSi rx900 experiences</a> for a conditinonally autoindexed directory example.</div></article></section><hr><section id=comments><h2 class=title>Your opinion matters—be heard</h2><button id=button_enable_comments class=comments-toggle onclick=enable_comments();>Click to show comments</button><div id=disqus_thread aria-live=polite><noscript><p>I respect your privacy. In general JavaScript is not required at all to view this site properly. However, if you are interested in comments please enable running of JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by my outsourced comment section provider Disqus.</a></p></noscript></div></section></section></section><footer id=footer class=inner><a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/><img alt="Creative Commons License" style=border-width:0 src=/images/cc-by-sa-4-0.png></a><br>Website contents at end.re by Endre Szabo are licensed under the <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>Creative Commons Attribution-ShareAlike 4.0 International License</a> unless stated otherwise.</footer><script src=/js/highlight.js></script><script>hljs.initHighlightingOnLoad();</script></main>

@@ -24,4 +24,4 @@ Title: "syncing android photos using standard unix tools"
 Date: 2017-10-15T11:54:53
 ---
 
-I looking for a complete photo backup solution that avoids the use of any Cloud backed storage.
+I was looking for a complete photo backup solution that avoids the use of any Cloud backed storage.
