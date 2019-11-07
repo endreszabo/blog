@@ -1,9 +1,9 @@
 DefaultContentLanguage: "en"
 copyright: "Copyright 2011-2016 Endre Szabo"
 description: "yet another tech blog with underdeveloped thoughts, quick and dirty tips and tricks, random ramblings"
-baseURL: https://staging.end.re/
+baseURL: https://www.qssl.org/~eszabo/
 languageCode: en-us
-title: end.re
+title: Endre Szabo
 MetaDataFormat: yaml
 theme: hugo-theme-end.re
 pygmentsUseClasses: true
@@ -13,16 +13,17 @@ preserveTaxonomyNames: false
 RemovePathAccents: false
 pluralizelisttitles: false
 #defaultContentLanguageInSubdir: true
-uglyURLs: false
+enableGitInfo: true
+uglyURLs: true
 newContentEditor: /usr/bin/vim
 blackfriday:
     hrefTargetBlank: true
 permalinks:
     default: /:slug
-    blog: /:year/:month/:day/:slug
+    blog: /blog/:slug
 params:
     disqusShortname: endreszabo
-    Subtitle: "end.re shares his thoughts with you"
+    Subtitle: "Endre shares his thoughts with you"
     Description: "yet another tech blog with underdeveloped thoughts, quick and dirty tips and tricks, random ramblings"
     AuthorName: "Endre Szabo"
     Author: "Endre Szabo"
@@ -42,15 +43,18 @@ params:
 Author: "Endre Szabo"
 menu:
     main:
-      - url: '/about/'
+      - url: '/index.html'
         name: 'About'
         weight: 0
-      - url: '/blog/'
+      - url: '/blog.html'
         name: 'Blog'
-        weight: 1
-      - url: '/tutorial/'
+        weight: 2
+      - url: '/tutorial.html'
         name: 'Tutorials'
-        weight: 1.5
+        weight: 3
+      - url: '/hu/'
+        name: '[Ugyanez magyarul]'
+        weight: 1
 axonomies:
     tags: "tags"
     categories: "categories"
@@ -62,7 +66,27 @@ Languages:
             tags: "címkék"
             categories: "kategóriák"
         params:
-            subtitle: end.re megosztja a gondolatait veled
+            subtitle: Endre megosztja a gondolatait veled
+            monthNames:
+                1: Jan
+                2: Feb
+                3: Már
+                4: Ápr
+                5: Máj
+                6: Jún
+                7: Júl
+axonomies:
+    tags: "tags"
+    categories: "categories"
+Languages:
+    en:
+        weight: 1
+    hu:
+        taxonomies:
+            tags: "címkék"
+            categories: "kategóriák"
+        params:
+            subtitle: Endre megosztja a gondolatait veled
             monthNames:
                 1: Jan
                 2: Feb
@@ -82,16 +106,20 @@ Languages:
         Author: "Szabó Endre"
         menu:
             main:
-              - url: '/rolam/'
+              - url: '/hu/index.html'
                 name: 'Rólam'
                 weight: 0
-              - url: '/hu/blog/'
+              - url: '/hu/blog.html'
                 name: 'Blog'
-                weight: 1
-              - url: '/hu/tutorial/'
+                weight: 2
+              - url: '/hu/tutorialok.html'
                 name: 'Tutorialok'
-                weight: 1.5
+                weight: 3
+              - url: '/'
+                name: '[Same in English]'
+                weight: 1
 ##outputFormats:
-##    RSS:
-##        mediatype: "application/rss"
-##        baseName: "feed/index"
+outputFormats:
+    RSS:
+        mediatype: "application/rss"
+        baseName: "feed/index"

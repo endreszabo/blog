@@ -16,7 +16,7 @@ clean:
 	rm -r public/ && mkdir public
 #deploying
 pgnd_server:
-	hugo server --bind 0.0.0.0 --verbose --baseURL http://127.0.0.1:1313/ --log --i18n-warnings --buildDrafts --buildFuture
+	hugo server --bind 0.0.0.0 --verbose --baseURL http://44.128.7.94:1313/~eszabo/ --log --i18n-warnings --buildDrafts --buildFuture
 install_staging:
 	bin/deploy.sh staging
 install_prod:
@@ -35,7 +35,7 @@ render_prod_html:
 render_html:
 	hugo --log --verbose --i18n-warnings --cleanDestinationDir
 minify_text:
-	minify -v -r public/ -o public/
+	#minify -v -r public/ -o public/
 gzip_text:
 	#FIXME: WTF is happening with print0 (no css or js compressed)
 	#find public/ -type f -iname \*.html -or -iname \*.css -or -iname \*.js -or -iname \*.xml -print0 | xargs --null --no-run-if-empty --verbose gzip -9vk --
