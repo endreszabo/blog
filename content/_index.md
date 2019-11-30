@@ -16,7 +16,7 @@ params:
 title: About me
 ---
 
-TL;DR: Techblog old school hacker; father; wannabe expat; introversion, intuition, thinking, perceiving
+TL;DR: Techblog old school hacker; father of two; expat; introversion, intuition, thinking, perceiving
 
 ## What is this?
 
