@@ -160,7 +160,7 @@ error: failed to prepare transaction (could not satisfy dependencies)
 :: installing linux-lts (4.14.45-1) breaks dependency 'linux-lts=4.14.41-1' required by zfs-linux-lts
 ```
 
-If your most recent ArchZFS matching linux kernel modules and other ZFS packages are already installed, you've got no other options than to ignore the upgradde of the newer kernel packages until the ArchZFS repository keeps up again:
+If your most recent ArchZFS matching linux kernel modules and other ZFS packages are already installed, you've got no other options than to ignore the upgrade of the newer kernel packages until the ArchZFS repository keeps up again:
 
 ```
 # pacman -Su --ignore=linux-lts{,-headers}
