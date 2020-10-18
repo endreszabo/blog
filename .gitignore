@@ -1,6 +1,6 @@
 .gitignore
 .sass-cache/
-public/
+.vscode/
 static/pimg
 static/p
 static/css/screen.css*

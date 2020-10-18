@@ -1,3 +1,9 @@
 [submodule "themes/hugo-theme-end.re"]
 	path = themes/hugo-theme-end.re
 	url = git@github.com:endreszabo/hugo-theme-end.re
+[submodule "public"]
+	path = public
+	url = git@github.com:endreszabo/endreszabo.github.io.git
+[submodule "content"]
+	path = content
+	url = git@github.com:endreszabo/blog-posts.git

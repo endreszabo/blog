@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"name": "Content",
+			"path": "content"
+		},
+		{
+			"name": "Blog",
+			"path": "."
+		},
+		{
+			"name": "Theme",
+			"path": "themes/hugo-theme-end.re"
+		}
+	],
+	"settings": {
+		"files.exclude":{
+			"themes/": true,
+			"public/": true,
+			"static/p": true,
+			"content": true
+		}
+	}
+}

@@ -16,7 +16,7 @@ clean:
 	rm -r public/ && mkdir public
 #deploying
 pgnd_server:
-	hugo server --bind 0.0.0.0 --verbose --baseURL http://44.128.0.101:1313/~eszabo/ --log --i18n-warnings --buildDrafts --buildFuture
+	hugo server --bind 0.0.0.0 --verbose --baseURL http://127.0.0.1:1313/~eszabo/ --log --i18n-warnings --buildDrafts --buildFuture
 install_staging:
 	bin/deploy.sh staging
 install_prod:

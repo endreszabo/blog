@@ -14,7 +14,7 @@ RemovePathAccents: false
 pluralizelisttitles: false
 #defaultContentLanguageInSubdir: true
 enableGitInfo: true
-uglyURLs: true
+uglyURLs: false
 newContentEditor: /usr/bin/vim
 blackfriday:
     hrefTargetBlank: true
@@ -43,17 +43,17 @@ params:
 Author: "Endre Szabo"
 menu:
     main:
-      - url: '/index.html'
+      - url: '/about'
         name: 'About'
         weight: 0
-      - url: '/blog.html'
+      - url: '/'
         name: 'Blog'
         weight: 2
-      - url: '/tutorial.html'
+      - url: '/tutorial/'
         name: 'Tutorials'
         weight: 3
       - url: '/hu/'
-        name: '[Ugyanez magyarul]'
+        name: 'HU'
         weight: 1
 axonomies:
     tags: "tags"
@@ -106,17 +106,17 @@ Languages:
         Author: "Szabó Endre"
         menu:
             main:
-              - url: '/hu/index.html'
+              - url: '/hu/rolam/'
                 name: 'Rólam'
                 weight: 0
-              - url: '/hu/blog.html'
+              - url: '/hu/blog/'
                 name: 'Blog'
                 weight: 2
-              - url: '/hu/tutorialok.html'
+              - url: '/hu/tutorialok/'
                 name: 'Tutorialok'
                 weight: 3
               - url: '/'
-                name: '[Same in English]'
+                name: 'English'
                 weight: 1
 ##outputFormats:
 outputFormats:
